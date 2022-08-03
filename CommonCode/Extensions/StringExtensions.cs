@@ -3,12 +3,12 @@
     public static class StringExtensions
     {
 
-        public static int[] ConvertToIntArray(this string s)
+        public static int[] GetIntArray(this string s)
         {
-            return ConvertToIntArray(s, ',');
+            return GetIntArray(s, ',');
         }
 
-        public static int[] ConvertToIntArray(this string s, char splitSymbol)
+        public static int[] GetIntArray(this string s, char splitSymbol)
         {
             var result = new List<int>();
             var stringArray = s.Split(splitSymbol, StringSplitOptions.RemoveEmptyEntries);
@@ -19,5 +19,14 @@
             return result.ToArray();
         }
 
+        public static string[] GetStringArray(this string s)
+        {
+            return GetStringArray(s, ',');
+        }
+
+        public static string[] GetStringArray(this string s, char splitSymbol)
+        {
+            return s.Split(splitSymbol, StringSplitOptions.RemoveEmptyEntries);
+        }
     }
 }

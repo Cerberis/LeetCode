@@ -1,13 +1,12 @@
 ﻿
 using RomanToInteger;
 
-
-
 var givenRomanNumber = Console.ReadLine();
 if (string.IsNullOrEmpty(givenRomanNumber))
 {
     throw new ArgumentNullException("Number cannot be empty");
 }
 
-int result = Calculate2.Calculate(givenRomanNumber.ToLower());
+ICalculator calculator = new Calculator2();
+int result = calculator.Calculate(givenRomanNumber.ToLower());
 Console.WriteLine($"Result is {result}");

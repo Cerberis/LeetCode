@@ -1,8 +1,8 @@
 ﻿namespace RomanToInteger
 {
-    public static class Calculate1
+    public class Calculator1 : ICalculator
     {
-        static readonly IReadOnlyDictionary<char, int> romanSingleNumbers = new Dictionary<char, int>
+        readonly IReadOnlyDictionary<char, int> romanSingleNumbers = new Dictionary<char, int>
     {
          { 'm', 1000 },
          { 'd', 500 },
@@ -12,7 +12,7 @@
          { 'v', 5 },
          { 'i', 1 }
 };
-        static readonly IReadOnlyDictionary<string, int> romanJoinedNumbers = new Dictionary<string, int>
+        readonly IReadOnlyDictionary<string, int> romanJoinedNumbers = new Dictionary<string, int>
 {
          {"cm",900 },
          {"cd",400 },
@@ -22,9 +22,7 @@
          {"iv", 4 }
 };
 
-
-
-        public static int Calculate(string givenRomanNumber)
+        public int Calculate(string givenRomanNumber)
         {
             int result = 0;
             foreach (var romanJoinedNumber in romanJoinedNumbers)
@@ -39,7 +37,7 @@
             return result;
         }
 
-        static int CalculateRomanSingleNumbers(string givenRomanNumber)
+        int CalculateRomanSingleNumbers(string givenRomanNumber)
         {
             var result = 0;
             foreach (var romanSingleNumber in romanSingleNumbers)

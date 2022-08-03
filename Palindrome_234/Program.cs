@@ -9,6 +9,6 @@ if (string.IsNullOrEmpty(givenRomanNumber))
     throw new ArgumentNullException("Array can not be empty");
 }
 
-var numberArray = givenRomanNumber.ConvertToIntArray();
-var result = Calculate1.Calculate(numberArray);
+var numberArray = givenRomanNumber.GetIntArray();
+var result = Calulator.Calculate(numberArray);
 Console.WriteLine($"Is array palindromic: {result}");

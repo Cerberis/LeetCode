@@ -1,6 +1,6 @@
 ﻿namespace RomanToInteger
 {
-    public static class Calculate2
+    public class Calculator2 : ICalculator
     {
         static readonly IReadOnlyDictionary<char, int> romanSingleNumbers = new Dictionary<char, int>
     {
@@ -24,7 +24,7 @@
 
 
 
-        public static int Calculate(string givenRomanNumber)
+        public int Calculate(string givenRomanNumber)
         {
             int result = 0;
             foreach (var romanJoinedNumber in romanJoinedNumbers)

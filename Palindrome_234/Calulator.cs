@@ -1,6 +1,6 @@
 ﻿namespace Palindrome
 {
-    public static class Calculate1
+    public static class Calulator
     {
         public static bool Calculate(int[] numberList)
         {

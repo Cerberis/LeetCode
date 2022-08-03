@@ -1,6 +1,6 @@
 ﻿namespace RomanToInteger
 {
-    public static class Calculate3
+    public class Calculator3 : ICalculator
     {
         static readonly IReadOnlyDictionary<char, int> romanSingleNumbers = new Dictionary<char, int>
     {
@@ -14,7 +14,7 @@
 };
 
 
-        public static int Calculate(string givenRomanNumber)
+        public int Calculate(string givenRomanNumber)
         {
             givenRomanNumber = givenRomanNumber.Replace("cm", "dcccc").Replace("cd", "cccc").Replace("xc", "lxxxx").Replace("xl", "xxxx").Replace("ix", "viiii").Replace("iv", "iiii");
             return CalculateRomanSingleNumbers(givenRomanNumber);
